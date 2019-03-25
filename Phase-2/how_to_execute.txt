@@ -1,0 +1,9 @@
+Instructions for execution in postgresql
+
+// creating the database(event_management)
+$ psql -U postgres postgres
+$ CREATE DATABASE event_management;
+$\c event_management;                    //connecting to the database
+$\i 'Desktop/event-management-master/Phase-2/create.sql'  //create database (the location of the file may be different)
+$\i 'Desktop/event-management-master/Phase-2/insert.sql'  //populate the database
+$\i 'Desktop/event-management-master/Phase-2/queries.sql' //run the queries
