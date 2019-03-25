@@ -1,3 +1,5 @@
+CREATE DATABASE event_management;
+\c event_management;
 CREATE TABLE STUDENT(SName 	VARCHAR(40) 	NOT NULL,
 					 SPhone 	CHAR(10)				,
 					 SEmail 	VARCHAR (30)    NOT NULL,
