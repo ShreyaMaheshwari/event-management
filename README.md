@@ -9,10 +9,12 @@ Sai Priya PES1201701565
 
 # execution commands 
 
-\i 'Desktop/event-management-master/Phase-2/create.sql'
+$psql -U postgres postgres
 
-\i 'Desktop/event-management-master/Phase-2/insert.sql'
+$\i 'Desktop/event-management-master/Phase-2/create.sql'
 
-\i 'Desktop/event-management-master/Phase-2/queries.sql'
+$\i 'Desktop/event-management-master/Phase-2/insert.sql'
+
+$\i 'Desktop/event-management-master/Phase-2/queries.sql'
 
 note: the file location may be different
