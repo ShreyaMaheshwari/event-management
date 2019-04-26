@@ -18,8 +18,6 @@ $\i 'Desktop/event-management-master/Phase-2/insert.sql'
 $\i 'Desktop/event-management-master/Phase-2/queries.sql'
 
 note: the file location may be different
-<<<<<<< HEAD
-=======
 
 Download the Final Application file
 
@@ -29,6 +27,3 @@ start apache in xampp
 
 open login.php page
 
-
-
->>>>>>> 4dd461281352abcc738c48fe17a71d9d62683e77
