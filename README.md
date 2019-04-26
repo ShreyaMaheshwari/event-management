@@ -19,7 +19,11 @@ $\i 'Desktop/event-management-master/Phase-2/queries.sql'
 
 note: the file location may be different
 
-Download the Final Application file and start apache in xampp 
+Download the Final Application file
+
+open all the php files and change the db name and the password
+
+start apache in xampp 
 
 open login.php page
 
