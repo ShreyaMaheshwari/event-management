@@ -20,6 +20,7 @@ $\i 'Desktop/event-management-master/Phase-2/queries.sql'
 note: the file location may be different
 
 Download the Final Application file and start apache in xampp 
+
 open login.php page
 
 
