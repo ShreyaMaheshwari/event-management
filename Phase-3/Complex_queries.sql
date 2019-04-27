@@ -1,0 +1,26 @@
+-- Complex Queries
+
+-- 1. To find the events in your college which you haven't already registered for and which are still available for registrations acc to maximum participation constraint 
+
+SELECT EName , EVenue, EId FROM EVENT WHERE event.ECollege =  (SELECT SCollege FROM STUDENT WHERE student.sid = '$id') and EMaxPar>(SELECT count(*) FROM REGISTRATION as R WHERE R.REvId=EVENT.EId) and NOT EXISTS (SELECT * FROM TEAM_MEM,REGISTRATION WHERE TEAM_MEM.SId='$id' and TEAM_MEM.RId=REGISTRATION.RId and EVENT.EId=REGISTRATION.REvId );
+
+
+-- 2. To find the events that we recommend to students based on their hobbies 
+
+SELECT EName, ECollege, EVenue, EId FROM EVENT WHERE EType in (SELECT hobby from HOBBY H WHERE H.Id='$id') and NOT EXISTS (SELECT * FROM TEAM_MEM,REGISTRATION WHERE TEAM_MEM.SId='$id' and TEAM_MEM.RId=REGISTRATION.RId and EVENT.EId=REGISTRATION.REvId );
+
+-- 3. To find the team members of the event you have registered for
+
+SELECT st.SName, st.SPhone from STUDENT st WHERE st.sid in (SELECT s.Sid from student s, team_mem m, registration r where r.revid = '$eid' and r.rid = m.rid and m.sid = s.sid);
+
+-- 4. To display all the events that a user hasn't registered for yet  
+
+SELECT EName, ECollege, EType, EId, EVenue, ESize from EVENT e where e.eid not in (select r.revid from registration r,team_mem t where t.sid='$user_check' and r.rid=t.rid );
+
+-- 5. Display the winners given an event 
+
+SELECT STUDENT.SName, REGISTRATION.RPrize 
+FROM STUDENT, REGISTRATION, TEAM_MEM, EVENT
+WHERE TEAM_MEM.SId = STUDENT.SId AND REGISTRATION.RId = TEAM_MEM.RId AND REGISTRATION.REvId = EVENT.EId AND EVENT.EId = '7' AND REGISTRATION.RPrize != 'NONE' 
+ORDER BY RPrize::int;
+
